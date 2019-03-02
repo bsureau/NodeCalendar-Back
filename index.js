@@ -146,7 +146,3 @@ app.get('/del/:id', passport.authenticate('jwt', {session: false}), urlEncodedPa
 app.listen(PORT, function () {
     console.log('Example app listening on port ' + PORT)
 })
-
-/*
-TODO : utiliser middleware CORS lors de la réalisation du frontend avec VueJS
- */
