@@ -96,11 +96,6 @@ app.post('/login', urlEncodedParser, (req, res) => {
 })
 
 app.get('/myevents', passport.authenticate('jwt', {session: false}), (req, res) => {
-    if (events.length === 0) {
-        res.send('Aucun événement n\'a encore été ajouté !')
-        return
-    }
-
     let eventsPersos = events.filter(event => event.userId === req.user.id)
     res.send(eventsPersos)
 })
